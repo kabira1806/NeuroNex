@@ -1,0 +1,66 @@
+/* ELDER-FRIENDLY GLOBAL STYLES */
+
+/* Iteration 1: Readability & Touch Comfort */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left; /* Buzurgon ke liye left-aligned text padhna aasaan hota hai */
+}
+
+/* Base font size badha diya taaki strain na ho */
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px; /* Iteration 1: Minimum 18px base size */
+  line-height: 1.6;
+  font-weight: 500;
+  background-color: #f8fafc; /* Shanti bhara light background */
+  color: #1e293b; /* High contrast dark text */
+}
+
+/* Iteration 1: Bade Tappable Areas */
+button {
+  min-height: 56px; /* Bada button taaki shaky hands se bhi touch ho sake */
+  padding: 0.8em 1.5em;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 16px; /* Rounded corners for comfort */
+  cursor: pointer;
+  transition: transform 0.1s active;
+}
+
+button:active {
+  transform: scale(0.95); /* Haptic feedback ka visual ehsas */
+}
+
+/* Links aur Clickables ke beech spacing */
+a {
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mobile Layout: Horizontal scrolling band karne ke liye */
+body {
+  margin: 0;
+  display: flex;
+  place-items: start;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar ko thoda saaf dikhane ke liye */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
