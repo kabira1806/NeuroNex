@@ -17,12 +17,12 @@ const handleResponse = async (response) => {
       try {
         const error = await response.json();
         errorMessage = error.detail || error.message || errorMessage;
-      } catch (e) {
+      } catch {
         // If JSON parsing fails, use text
         try {
           const text = await response.text();
           errorMessage = text || errorMessage;
-        } catch (e2) {
+        } catch {
           // Fallback
         }
       }
@@ -30,7 +30,7 @@ const handleResponse = async (response) => {
       try {
         const text = await response.text();
         if (text) errorMessage = text;
-      } catch (e) {
+      } catch {
         // Fallback
       }
     }

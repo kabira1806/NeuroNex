@@ -7,6 +7,7 @@ import { voicebotAPI } from '../services/api';
 const VoiceAssistant = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
+  const [isRequestingMic, setIsRequestingMic] = useState(false);
   const [messages, setMessages] = useState([{ id: 1, text: "Namaste! Main Saathi AI hu. Kaisa mehsoos kar rahe hain?", sender: 'bot' }]);
   
   // Audio Refs
@@ -22,8 +23,10 @@ const VoiceAssistant = ({ user }) => {
   // --- RECORDING LOGIC ---
   const startRecording = async () => {
     try {
+      setIsRequestingMic(true);
       console.log("🎤 Requesting microphone access...");
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      setIsRequestingMic(false);
       streamRef.current = stream;
       
       console.log("✅ Microphone access granted");
@@ -58,6 +61,7 @@ const VoiceAssistant = ({ user }) => {
       setIsRecording(true);
       console.log("🔴 Recording started");
     } catch (err) {
+      setIsRequestingMic(false);
       console.error("❌ Mic Error:", err);
       alert(`Microphone access denied: ${err.message}`);
     }
@@ -248,23 +252,26 @@ const VoiceAssistant = ({ user }) => {
             <div className="p-4 bg-white border-t flex flex-col items-center gap-2">
                 <button 
                   onClick={() => {
+                    if (isRequestingMic) return;
                     if (isRecording) {
                       stopRecording();
                     } else {
                       startRecording();
                     }
                   }}
-                  className={`p-6 rounded-full transition-all shadow-lg font-bold text-white ${isRecording ? 'bg-red-500 scale-110 animate-pulse' : 'bg-[#278c5f] hover:scale-105 active:scale-95'}`}
-                  title={isRecording ? "Recording... Click to send" : "Click to speak"}
+                  className={`p-6 rounded-full transition-all shadow-lg font-bold text-white ${isRequestingMic ? 'bg-yellow-500 scale-105' : isRecording ? 'bg-red-500 scale-110 animate-pulse' : 'bg-[#278c5f] hover:scale-105 active:scale-95'}`}
+                  title={isRequestingMic ? "Requesting access..." : isRecording ? "Recording... Click to send" : "Click to speak"}
                 >
-                   {isRecording ? (
+                   {isRequestingMic ? (
+                     <Loader className="animate-spin" size={32} />
+                   ) : isRecording ? (
                      <Loader className="animate-spin" size={32} />
                    ) : (
                      <Mic size={32} />
                    )}
                 </button>
                 <p className="text-xs text-slate-500 text-center">
-                  {isRecording ? "🔴 Recording... Click to send" : "🎤 Click & Speak"}
+                  {isRequestingMic ? "⏳ Requesting Mic..." : isRecording ? "🔴 Recording... Click to send" : "🎤 Click & Speak"}
                 </p>
             </div>
 

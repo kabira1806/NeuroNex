@@ -1,0 +1,236 @@
+Collecting fastapi==0.109.2 (from -r requirements.txt (line 2))
+  Obtaining dependency information for fastapi==0.109.2 from https://files.pythonhosted.org/packages/bf/97/60351307ab4502908d29f64f2801a36709a3f1888447bb328bc373d6ca0e/fastapi-0.109.2-py3-none-any.whl.metadata
+  Using cached fastapi-0.109.2-py3-none-any.whl.metadata (25 kB)
+Collecting uvicorn[standard]==0.27.1 (from -r requirements.txt (line 3))
+  Obtaining dependency information for uvicorn[standard]==0.27.1 from https://files.pythonhosted.org/packages/d9/fd/bac111726b6c651f1fa5563145ecba5ff70d36fb140a55e0d79b60b9d65e/uvicorn-0.27.1-py3-none-any.whl.metadata
+  Using cached uvicorn-0.27.1-py3-none-any.whl.metadata (6.3 kB)
+Collecting sqlalchemy==2.0.25 (from -r requirements.txt (line 4))
+  Obtaining dependency information for sqlalchemy==2.0.25 from https://files.pythonhosted.org/packages/1b/9e/3f86cf00c2245afb236205ab0fbdf7b77ac4ee931603e18b7e192315a514/SQLAlchemy-2.0.25-py3-none-any.whl.metadata
+  Using cached SQLAlchemy-2.0.25-py3-none-any.whl.metadata (9.6 kB)
+Collecting python-multipart==0.0.9 (from -r requirements.txt (line 5))
+  Obtaining dependency information for python-multipart==0.0.9 from https://files.pythonhosted.org/packages/3d/47/444768600d9e0ebc82f8e347775d24aef8f6348cf00e9fa0e81910814e6d/python_multipart-0.0.9-py3-none-any.whl.metadata
+  Using cached python_multipart-0.0.9-py3-none-any.whl.metadata (2.5 kB)
+Collecting pydantic==2.12.5 (from -r requirements.txt (line 6))
+  Obtaining dependency information for pydantic==2.12.5 from https://files.pythonhosted.org/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl.metadata
+  Using cached pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+Collecting pydantic-settings==2.1.0 (from -r requirements.txt (line 7))
+  Obtaining dependency information for pydantic-settings==2.1.0 from https://files.pythonhosted.org/packages/5d/c9/8042368e9a1e6e229b5ec5d88449441a3ee8f8afe09988faeb190af30248/pydantic_settings-2.1.0-py3-none-any.whl.metadata
+  Using cached pydantic_settings-2.1.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting python-jose[cryptography]==3.3.0 (from -r requirements.txt (line 8))
+  Obtaining dependency information for python-jose[cryptography]==3.3.0 from https://files.pythonhosted.org/packages/bd/2d/e94b2f7bab6773c70efc70a61d66e312e1febccd9e0db6b9e0adf58cbad1/python_jose-3.3.0-py2.py3-none-any.whl.metadata
+  Using cached python_jose-3.3.0-py2.py3-none-any.whl.metadata (5.4 kB)
+Collecting passlib[bcrypt]==1.7.4 (from -r requirements.txt (line 9))
+  Obtaining dependency information for passlib[bcrypt]==1.7.4 from https://files.pythonhosted.org/packages/3b/a4/ab6b7589382ca3df236e03faa71deac88cae040af60c071a78d254a62172/passlib-1.7.4-py2.py3-none-any.whl.metadata
+  Using cached passlib-1.7.4-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting aiosqlite==0.19.0 (from -r requirements.txt (line 10))
+  Obtaining dependency information for aiosqlite==0.19.0 from https://files.pythonhosted.org/packages/ef/4f/22d2edd4cd2a84e179f8c43806cb29cf03a344d2f27a7c6d5afef43bbe7e/aiosqlite-0.19.0-py3-none-any.whl.metadata
+  Using cached aiosqlite-0.19.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting google-genai (from -r requirements.txt (line 12))
+  Obtaining dependency information for google-genai from https://files.pythonhosted.org/packages/84/de/7d3ee9c94b74c3578ea4f88d45e8de9405902f857932334d81e89bce3dfa/google_genai-1.68.0-py3-none-any.whl.metadata
+  Using cached google_genai-1.68.0-py3-none-any.whl.metadata (52 kB)
+Collecting openai-whisper (from -r requirements.txt (line 13))
+  Using cached openai_whisper-20250625-py3-none-any.whl
+Collecting scikit-learn (from -r requirements.txt (line 14))
+  Using cached scikit_learn-1.8.0.tar.gz (7.3 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  pip subprocess to install build dependencies did not run successfully.
+  exit code: 1
+  
+  [180 lines of output]
+  Collecting meson-python<0.19.0,>=0.17.1
+    Obtaining dependency information for meson-python<0.19.0,>=0.17.1 from https://files.pythonhosted.org/packages/28/58/66db620a8a7ccb32633de9f403fe49f1b63c68ca94e5c340ec5cceeb9821/meson_python-0.18.0-py3-none-any.whl.metadata
+    Using cached meson_python-0.18.0-py3-none-any.whl.metadata (2.8 kB)
+  Collecting cython<3.3.0,>=3.1.2
+    Obtaining dependency information for cython<3.3.0,>=3.1.2 from https://files.pythonhosted.org/packages/ff/fa/d3c15189f7c52aaefbaea76fb012119b04b9013f4bf446cb4eb4c26c4e6b/cython-3.2.4-py3-none-any.whl.metadata
+    Using cached cython-3.2.4-py3-none-any.whl.metadata (7.3 kB)
+  Collecting numpy<2.4.0,>=2
+    Using cached numpy-2.3.5.tar.gz (20.6 MB)
+    Installing build dependencies: started
+    Installing build dependencies: finished with status 'done'
+    Getting requirements to build wheel: started
+    Getting requirements to build wheel: finished with status 'done'
+    Installing backend dependencies: started
+    Installing backend dependencies: finished with status 'error'
+    error: subprocess-exited-with-error
+  
+    pip subprocess to install backend dependencies did not run successfully.
+    exit code: 1
+  
+    [146 lines of output]
+    Collecting ninja>=1.8.2
+      Using cached ninja-1.13.0.tar.gz (242 kB)
+      Installing build dependencies: started
+      Installing build dependencies: finished with status 'done'
+      Getting requirements to build wheel: started
+      Getting requirements to build wheel: finished with status 'done'
+      Installing backend dependencies: started
+      Installing backend dependencies: finished with status 'error'
+      error: subprocess-exited-with-error
+  
+      pip subprocess to install backend dependencies did not run successfully.
+      exit code: 1
+  
+      [118 lines of output]
+      Collecting hatch-fancy-pypi-readme>=23.2
+        Obtaining dependency information for hatch-fancy-pypi-readme>=23.2 from https://files.pythonhosted.org/packages/58/b4/ad71e051b34f1935783de37beffee16e343ff2514b204dc515f9e939d4af/hatch_fancy_pypi_readme-25.1.0-py3-none-any.whl.metadata
+        Using cached hatch_fancy_pypi_readme-25.1.0-py3-none-any.whl.metadata (2.0 kB)
+      Collecting setuptools-scm
+        Obtaining dependency information for setuptools-scm from https://files.pythonhosted.org/packages/3d/ea/ac2bf868899d0d2e82ef72d350d97a846110c709bacf2d968431576ca915/setuptools_scm-9.2.2-py3-none-any.whl.metadata
+        Using cached setuptools_scm-9.2.2-py3-none-any.whl.metadata (7.7 kB)
+      Collecting cmake>=3.15
+        Using cached cmake-4.3.0.tar.gz (36 kB)
+        Installing build dependencies: started
+        Installing build dependencies: finished with status 'done'
+        Getting requirements to build wheel: started
+        Getting requirements to build wheel: finished with status 'done'
+        Preparing metadata (pyproject.toml): started
+        Preparing metadata (pyproject.toml): finished with status 'done'
+      Collecting hatchling (from hatch-fancy-pypi-readme>=23.2)
+        Obtaining dependency information for hatchling from https://files.pythonhosted.org/packages/d3/8a/44032265776062a89171285ede55a0bdaadc8ac00f27f0512a71a9e3e1c8/hatchling-1.29.0-py3-none-any.whl.metadata
+        Using cached hatchling-1.29.0-py3-none-any.whl.metadata (3.8 kB)
+      Collecting packaging>=20 (from setuptools-scm)
+        Obtaining dependency information for packaging>=20 from https://files.pythonhosted.org/packages/b7/b9/c538f279a4e237a006a2c98387d081e9eb060d203d8ed34467cc0f0b9b53/packaging-26.0-py3-none-any.whl.metadata
+        Using cached packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+      Collecting setuptools (from setuptools-scm)
+        Obtaining dependency information for setuptools from https://files.pythonhosted.org/packages/9d/76/f789f7a86709c6b087c5a2f52f911838cad707cc613162401badc665acfe/setuptools-82.0.1-py3-none-any.whl.metadata
+        Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)
+      Collecting pathspec>=0.10.1 (from hatchling->hatch-fancy-pypi-readme>=23.2)
+        Obtaining dependency information for pathspec>=0.10.1 from https://files.pythonhosted.org/packages/ef/3c/2c197d226f9ea224a9ab8d197933f9da0ae0aac5b6e0f884e2b8d9c8e9f7/pathspec-1.0.4-py3-none-any.whl.metadata
+        Using cached pathspec-1.0.4-py3-none-any.whl.metadata (13 kB)
+      Collecting pluggy>=1.0.0 (from hatchling->hatch-fancy-pypi-readme>=23.2)
+        Obtaining dependency information for pluggy>=1.0.0 from https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl.metadata
+        Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+      Collecting trove-classifiers (from hatchling->hatch-fancy-pypi-readme>=23.2)
+        Obtaining dependency information for trove-classifiers from https://files.pythonhosted.org/packages/bb/4a/2e5583e544bc437d5e8e54b47db87430df9031b29b48d17f26d129fa60c0/trove_classifiers-2026.1.14.14-py3-none-any.whl.metadata
+        Using cached trove_classifiers-2026.1.14.14-py3-none-any.whl.metadata (2.4 kB)
+      Using cached hatch_fancy_pypi_readme-25.1.0-py3-none-any.whl (10 kB)
+      Using cached setuptools_scm-9.2.2-py3-none-any.whl (62 kB)
+      Using cached packaging-26.0-py3-none-any.whl (74 kB)
+      Using cached hatchling-1.29.0-py3-none-any.whl (76 kB)
+      Using cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)
+      Using cached pathspec-1.0.4-py3-none-any.whl (55 kB)
+      Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+      Using cached trove_classifiers-2026.1.14.14-py3-none-any.whl (14 kB)
+      Building wheels for collected packages: cmake
+        Building wheel for cmake (pyproject.toml): started
+        Building wheel for cmake (pyproject.toml): finished with status 'error'
+        error: subprocess-exited-with-error
+  
+        Building wheel for cmake (pyproject.toml) did not run successfully.
+        exit code: 1
+  
+        [60 lines of output]
+        Traceback (most recent call last):
+          File "C:\msys64\ucrt64\lib\python3.11\urllib\request.py", line 1348, in do_open
+            h.request(req.get_method(), req.selector, req.data, headers,
+          File "C:\msys64\ucrt64\lib\python3.11\http\client.py", line 1294, in request
+            self._send_request(method, url, body, headers, encode_chunked)
+          File "C:\msys64\ucrt64\lib\python3.11\http\client.py", line 1340, in _send_request
+            self.endheaders(body, encode_chunked=encode_chunked)
+          File "C:\msys64\ucrt64\lib\python3.11\http\client.py", line 1289, in endheaders
+            self._send_output(message_body, encode_chunked=encode_chunked)
+          File "C:\msys64\ucrt64\lib\python3.11\http\client.py", line 1048, in _send_output
+            self.send(msg)
+          File "C:\msys64\ucrt64\lib\python3.11\http\client.py", line 986, in send
+            self.connect()
+          File "C:\msys64\ucrt64\lib\python3.11\http\client.py", line 1466, in connect
+            self.sock = self._context.wrap_socket(self.sock,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\ssl.py", line 517, in wrap_socket
+            return self.sslsocket_class._create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\ssl.py", line 1108, in _create
+            self.do_handshake()
+          File "C:\msys64\ucrt64\lib\python3.11\ssl.py", line 1383, in do_handshake
+            self._sslobj.do_handshake()
+        ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)
+  
+        During handling of the above exception, another exception occurred:
+  
+        Traceback (most recent call last):
+          File "C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Backend\venv\lib\python3.11\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 353, in <module>
+            main()
+          File "C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Backend\venv\lib\python3.11\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 335, in main
+            json_out['return_val'] = hook(**hook_input['kwargs'])
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Backend\venv\lib\python3.11\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 251, in build_wheel
+            return _build_backend().build_wheel(wheel_directory, config_settings,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\Users\Divyam Gulgulia\AppData\Local\Temp\pip-install-laev4l_n\cmake_6292c07a29f441c9bef3798fc1c991b3\_build_backend\backend.py", line 156, in build_wheel
+            cmake_path = _bootstrap_build(temp_path, config_settings)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\Users\Divyam Gulgulia\AppData\Local\Temp\pip-install-laev4l_n\cmake_6292c07a29f441c9bef3798fc1c991b3\_build_backend\backend.py", line 103, in _bootstrap_build
+            with urllib.request.urlopen(archive_url) as response:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\urllib\request.py", line 216, in urlopen
+            return opener.open(url, data, timeout)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\urllib\request.py", line 519, in open
+            response = self._open(req, data)
+                       ^^^^^^^^^^^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\urllib\request.py", line 536, in _open
+            result = self._call_chain(self.handle_open, protocol, protocol +
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\urllib\request.py", line 496, in _call_chain
+            result = func(*args)
+                     ^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\urllib\request.py", line 1391, in https_open
+            return self.do_open(http.client.HTTPSConnection, req,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          File "C:\msys64\ucrt64\lib\python3.11\urllib\request.py", line 1351, in do_open
+            raise URLError(err)
+        urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>
+        [end of output]
+  
+        note: This error originates from a subprocess, and is likely not a problem with pip.
+        ERROR: Failed building wheel for cmake
+      Failed to build cmake
+      ERROR: Could not build wheels for cmake, which is required to install pyproject.toml-based projects
+  
+      [notice] A new release of pip is available: 23.2.1 -> 26.0.1
+      [notice] To update, run: C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Backend\venv\bin\python.exe -m pip install --upgrade pip
+      [end of output]
+  
+      note: This error originates from a subprocess, and is likely not a problem with pip.
+    error: subprocess-exited-with-error
+  
+    pip subprocess to install backend dependencies did not run successfully.
+    exit code: 1
+  
+    See above for output.
+  
+    note: This error originates from a subprocess, and is likely not a problem with pip.
+  
+    [notice] A new release of pip is available: 23.2.1 -> 26.0.1
+    [notice] To update, run: C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Backend\venv\bin\python.exe -m pip install --upgrade pip
+    [end of output]
+  
+    note: This error originates from a subprocess, and is likely not a problem with pip.
+  error: subprocess-exited-with-error
+  
+  pip subprocess to install backend dependencies did not run successfully.
+  exit code: 1
+  
+  See above for output.
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  
+  [notice] A new release of pip is available: 23.2.1 -> 26.0.1
+  [notice] To update, run: C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Backend\venv\bin\python.exe -m pip install --upgrade pip
+  [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+pip subprocess to install build dependencies did not run successfully.
+exit code: 1
+
+See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+
+[notice] A new release of pip is available: 23.2.1 -> 26.0.1
+[notice] To update, run: C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Backend\venv\bin\python.exe -m pip install --upgrade pip

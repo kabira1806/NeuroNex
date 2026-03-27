@@ -4,12 +4,6 @@ import json
 import base64
 import traceback
 from io import BytesIO
-import shutil
-import os
-import json
-import base64
-import traceback
-from io import BytesIO
 from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, Form
 from fastapi.concurrency import run_in_threadpool
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -234,12 +228,20 @@ async def process_audio(
             ai_data = {"reply": "Namaste! Aap kaise hain?", "mood": "Neutral", "medication_taken": None}
         else:
             # We can also wrap Gemini API calls inside run_in_threadpool if it's synchronous
-            response = await run_in_threadpool(client.models.generate_content, model="gemini-2.0-flash-exp", contents=prompt)
+            response = await run_in_threadpool(client.models.generate_content, model="gemini-2.5-flash", contents=prompt)
             print(f"✅ Gemini response: {response.text[:100]}...")
             
             # Parse AI response
             try:
-                ai_data = json.loads(response.text)
+                # Strip potential markdown formatting that Gemini might output
+                text = response.text.strip()
+                if text.startswith("```json"):
+                    text = text[7:]
+                if text.endswith("```"):
+                    text = text[:-3]
+                text = text.strip()
+                
+                ai_data = json.loads(text)
                 print(f"✅ AI response parsed: {ai_data}")
             except (json.JSONDecodeError, AttributeError) as e:
                 print(f"⚠️ JSON parse error: {e}, using default")

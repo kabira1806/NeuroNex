@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import VoiceAssistant from './components/VoiceAssistant'; 
 import Overview from './pages/Overview';
@@ -16,12 +16,12 @@ function App() {
   // --- 1. State Management ---
   const [currentUser, setCurrentUser] = useState(null);
   const [userRole, setUserRole] = useState(null);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen] = useState(true);
   const [medicines, setMedicines] = useState([]);
   const [medicineError, setMedicineError] = useState('');
   
   const navigate = useNavigate();
-  const location = useLocation();
+  // location unused
 
   // --- 2. API Functions ---
 
@@ -45,7 +45,7 @@ function App() {
     if (!med) return;
     
     try {
-      const updated = await medicationAPI.markMedicationTaken(id);
+      await medicationAPI.markMedicationTaken(id);
       // Refresh the medicines list
       fetchMedicines();
     } catch (error) {
@@ -60,7 +60,7 @@ function App() {
 
     try {
       setMedicineError('');
-      const result = await medicationAPI.addMedication(
+      await medicationAPI.addMedication(
         currentUser.id,
         newMed.name,
         newMed.dosage,
@@ -102,6 +102,8 @@ function App() {
   // Automatically fetch medicines whenever the user logs in
   useEffect(() => {
     if (currentUser) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       fetchMedicines();
     }
   }, [currentUser]);

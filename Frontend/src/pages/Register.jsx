@@ -21,7 +21,7 @@ const Register = ({ onSwitchToLogin }) => {
     setIsLoading(true);
     setError('');
     try {
-      const userData = await authAPI.register(
+      await authAPI.register(
         formData.name,
         formData.phone,
         formData.password,

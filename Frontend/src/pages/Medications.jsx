@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Pill, Plus, Trash2, Check, Clock, AlertCircle } from 'lucide-react';
 
-const Medications = ({ user, medicines = [], onToggle, onAdd, error = '' }) => {
+const Medications = ({ medicines = [], onToggle, onAdd, error = '' }) => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [formData, setFormData] = useState({ name: '', dosage: '', frequency: '', time: '' });
 

@@ -1,0 +1,19 @@
+
+> neuro-nex-frontend@0.0.0 lint
+> eslint .
+
+
+C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Frontend\src\App.jsx
+  105:7  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  106:7  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  109:6  warning  React Hook useEffect has a missing dependency: 'fetchMedicines'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Frontend\src\pages\Caretaker.jsx
+  121:6  warning  React Hook useEffect has a missing dependency: 'fetchElders'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Divyam Gulgulia\.gemini\antigravity\scratch\NeuroNex\Frontend\src\pages\Overview.jsx
+  427:6  warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+✖ 5 problems (0 errors, 5 warnings)
+  0 errors and 2 warnings potentially fixable with the `--fix` option.
+
