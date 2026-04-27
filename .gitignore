@@ -1,14 +1,12 @@
-#NODE
-node_modules/
-dist/
-
-#ENV FILES
+# Environment variables
 .env
+.env.*
 
-.vscode/
-*.log
+# Temporary files and logs
+*.txt
+!requirements.txt  
+tempCodeRunnerFile.py
+backend_crash.txt
 
-#PYTHON
-venv/
-__pycache__/
-*.pyc
+# Competitive Programming files
+.cph/
