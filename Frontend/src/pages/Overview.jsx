@@ -211,8 +211,8 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AlertCircle, Mic, Activity, Heart, Droplets, Wind, X, FileText, Plus } from "lucide-react";
-import { dashboardAPI, vitalsAPI } from "../services/api"; // Added vitalsAPI
+import { AlertCircle, Mic, Activity, Heart, Droplets, Wind, X, FileText, Plus, CheckCircle } from "lucide-react";
+import { dashboardAPI, vitalsAPI, alertsAPI } from "../services/api"; // Added vitalsAPI and alertsAPI
 
 // --- New Add Vitals Modal Component ---
 const AddVitalsModal = ({ isOpen, onClose, user, onSaveSuccess }) => {
@@ -379,6 +379,7 @@ const Overview = ({ user }) => {
   const [isVitalsModalOpen, setIsVitalsModalOpen] = useState(false); // Modal State
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [sosStatus, setSosStatus] = useState('idle'); // idle, loading, sent, error
 
   const [dashboardData, setDashboardData] = useState({
     userName: "",
@@ -426,6 +427,20 @@ const Overview = ({ user }) => {
     fetchData();
   }, [user]);
 
+  const handleEmergencySOS = async () => {
+    if (!user?.id) return;
+    try {
+      setSosStatus('loading');
+      await alertsAPI.sendEmergencyAlert(user.id);
+      setSosStatus('sent');
+      setTimeout(() => setSosStatus('idle'), 5000); // reset after 5s
+    } catch (err) {
+      console.error("SOS error:", err);
+      setSosStatus('error');
+      setTimeout(() => setSosStatus('idle'), 5000); // reset after 5s
+    }
+  };
+
   if (loading && !dashboardData.userName) return <div className="p-10 text-center text-[#278c5f] font-bold">Loading Health Data...</div>;
   if (error) return <div className="p-10 text-center text-red-600 font-bold">Error: {error}</div>;
 
@@ -465,15 +480,30 @@ const Overview = ({ user }) => {
         />
 
         <motion.button 
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setIsVitalsModalOpen(true)} // Repurposed SOS block for demo or just add a new button entirely. Waiting, actually let's keep SOS and add a smaller dedicated button below.
-          className="p-8 rounded-[2.5rem] bg-red-50 border-2 border-red-100 shadow-lg hover:shadow-xl transition-all flex flex-col items-start justify-between h-40 group"
+          whileHover={{ scale: sosStatus === 'idle' ? 1.05 : 1 }}
+          whileTap={{ scale: sosStatus === 'idle' ? 0.95 : 1 }}
+          onClick={sosStatus === 'idle' ? handleEmergencySOS : undefined}
+          disabled={sosStatus !== 'idle'}
+          className={`p-8 rounded-[2.5rem] border-2 shadow-lg hover:shadow-xl transition-all flex flex-col items-start justify-between h-40 group ${
+            sosStatus === 'sent' 
+              ? 'bg-green-50 border-green-200' 
+              : sosStatus === 'error'
+                ? 'bg-orange-50 border-orange-200'
+                : 'bg-red-50 border-red-100'
+          }`}
         >
-          <div className="bg-red-100 p-3 rounded-2xl group-hover:bg-red-200 transition-colors">
-             <AlertCircle size={32} className="text-red-600" />
+          <div className={`p-3 rounded-2xl transition-colors ${
+            sosStatus === 'sent'
+              ? 'bg-green-100 text-green-600'
+              : 'bg-red-100 text-red-600 group-hover:bg-red-200'
+          }`}>
+             {sosStatus === 'sent' ? <CheckCircle size={32} /> : <AlertCircle size={32} />}
           </div>
-          <h3 className="font-black text-2xl text-red-600 mt-2">SOS</h3>
+          <h3 className={`font-black text-2xl mt-2 ${
+            sosStatus === 'sent' ? 'text-green-600' : 'text-red-600'
+          }`}>
+            {sosStatus === 'loading' ? 'Sending...' : sosStatus === 'sent' ? 'SOS Sent!' : sosStatus === 'error' ? 'Failed!' : 'SOS'}
+          </h3>
         </motion.button>
       </div>
 

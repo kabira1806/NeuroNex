@@ -181,7 +181,7 @@ async def process_audio(
         print("\n🎙️ Attempting direct transcription...")
         try:
             # USE NON-BLOCKING THREADPOOL for Whisper Processing
-            result = await run_in_threadpool(whisper_model.transcribe, temp_filename)
+            result = await run_in_threadpool(whisper_model.transcribe, temp_filename, language="hi")
             user_text = result.get("text", "").strip()
             print(f"✅ Direct transcription successful: '{user_text}'")
         except Exception as direct_error:
@@ -197,7 +197,7 @@ async def process_audio(
             
             # Try transcribing the WAV file in NON-BLOCKING pool
             print("\n🎙️ Transcribing converted WAV...")
-            result = await run_in_threadpool(whisper_model.transcribe, wav_filename)
+            result = await run_in_threadpool(whisper_model.transcribe, wav_filename, language="hi")
             user_text = result.get("text", "").strip()
             print(f"✅ Transcription from WAV successful: '{user_text}'")
         

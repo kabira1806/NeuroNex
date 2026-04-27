@@ -72,3 +72,37 @@ async def unread_count(elder_id: int, db: AsyncSession = Depends(get_db)):
     )
     count = result.scalar()
     return {"elder_id": elder_id, "unread_count": count if count is not None else 0}
+
+
+@router.post("/emergency")
+async def trigger_emergency(elder_id: int, db: AsyncSession = Depends(get_db)):
+    """Trigger an SOS emergency alert and simulate sending an SMS."""
+    # Find elder caregivers
+    subq = select(CaregiverLink.caregiver_id).where(CaregiverLink.elder_id == elder_id)
+    result = await db.execute(subq)
+    caregiver_ids = [r[0] for r in result.all()]
+    
+    # Create the alert for the dashboard
+    from app.models import AlertSeverity
+    new_alert = Alert(
+        elder_id=elder_id,
+        severity=AlertSeverity.emergency,
+        alert_type="SOS",
+        title="EMERGENCY SOS TRIGGERED",
+        message="Elder has pressed the SOS emergency button!"
+    )
+    db.add(new_alert)
+    await db.commit()
+    await db.refresh(new_alert)
+    
+    # Mock sending SMS
+    print("=" * 60)
+    print("🚨 EMERGENCY SMS MOCK 🚨")
+    if caregiver_ids:
+        print(f"To Caregivers: {caregiver_ids}")
+        print(f"Message: EMERGENCY SOS! Elder {elder_id} needs immediate help!")
+    else:
+        print(f"Warning: Elder {elder_id} has no linked caregivers! Alert created anyway.")
+    print("=" * 60)
+    
+    return {"status": "success", "message": "Emergency alert sent successfully", "alert_id": new_alert.id}

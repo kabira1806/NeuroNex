@@ -211,6 +211,14 @@ export const vitalsAPI = {
 
 // ===== ALERTS ENDPOINTS =====
 export const alertsAPI = {
+  sendEmergencyAlert: async (elderId) => {
+    const response = await fetch(`${API_BASE_URL}/alerts/emergency?elder_id=${elderId}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    return handleResponse(response);
+  },
+
   getElderAlerts: async (elderId, limit = 20) => {
     const response = await fetch(
       `${API_BASE_URL}/alerts/elder/${elderId}?limit=${limit}`,

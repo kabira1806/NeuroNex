@@ -1,0 +1,14 @@
+#NODE
+node_modules/
+dist/
+
+#ENV FILES
+.env
+
+.vscode/
+*.log
+
+#PYTHON
+venv/
+__pycache__/
+*.pyc
