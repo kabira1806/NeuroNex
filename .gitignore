@@ -7,6 +7,7 @@
 !requirements.txt  
 tempCodeRunnerFile.py
 backend_crash.txt
+__pycache__/ 
 
 # Competitive Programming files
 .cph/
